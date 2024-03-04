@@ -1,8 +1,9 @@
 data "google_project" "project" {
+  count = length(var.project_id) == 0 ? 1 : 0
 }
 
 locals {
-  project_id = length(var.project_id) > 0 ? var.project_id : data.google_project.project.number
+  project_id = length(var.project_id) > 0 ? var.project_id : data.google_project.project[0].number
 }
 
 ## Cloud source repo
