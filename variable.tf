@@ -8,7 +8,7 @@ variable "project_id" {
 }
 
 variable "reponame" {
-  type        = bool
+  type        = string
   description = "Name of source repository"
 }
 
